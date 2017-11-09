@@ -9,10 +9,7 @@ module.exports = {
     getTemp: function (location) {
         console.log(location);
         var encodedLocation = encodeURIComponent(location);
-        console.log(encodedLocation);
-        'api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=180f2bddb788176e9859933b4fd8b951'
         var requestUrl = `${OPEN_WEATHER_MAP_URL}&q=${encodedLocation}`;
-        console.log(requestUrl);
         axios.defaults.baseURL = '';
 
         return axios.get(requestUrl).then(function (res) {
