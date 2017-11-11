@@ -7,7 +7,6 @@ const api_key = '180f2bddb788176e9859933b4fd8b951';
 
 module.exports = {
     getTemp: function (location) {
-        console.log(location);
         var encodedLocation = encodeURIComponent(location);
         var requestUrl = `${OPEN_WEATHER_MAP_URL}&q=${encodedLocation}`;
         axios.defaults.baseURL = '';

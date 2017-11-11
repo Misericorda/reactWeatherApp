@@ -3,6 +3,8 @@ import WeatherForm from 'WeatherForm';
 import WeatherMessage from 'WeatherMessage';
 import OpenWeatherMap from 'OpenWeatherMap';
 import ErrorModal from 'ErrorModal';
+import queryString from 'query-string';
+
 class Weather extends React.Component {
     constructor(props) {
         super(props);
@@ -12,12 +14,32 @@ class Weather extends React.Component {
         }
     }
 
+    componentWillReceiveProps(newProps) {
+       const parsed = queryString.parse(newProps.location.search);
+        var location = parsed.location;
+        if (location && location.length > 0) {
+            this.handleSearch(location);
+            window.location.hash = '#/';
+        }
+    }
+
+    componentDidMount() {
+        const parsed = queryString.parse(this.props.location.search);
+        var location = parsed.location;
+        if (location && location.length > 0) {
+            this.handleSearch(location);
+            window.location.hash = '#/';
+        }
+    }
+
     handleSearch = (location) => {
         var that = this;
 
         this.setState({
             isLoading: true,
-            errorMessage: undefined
+            errorMessage: undefined,
+            location: undefined,
+            temp: undefined,
         });
 
         OpenWeatherMap.getTemp(location).then(function (temp) {

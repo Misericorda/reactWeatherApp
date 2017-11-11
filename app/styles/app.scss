@@ -1,0 +1,13 @@
+$space-large: 2.5rem;
+
+
+.page-title {
+  margin-top: $space-large;
+  margin-bottom: $space-large;
+}
+
+input[type=search] {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
