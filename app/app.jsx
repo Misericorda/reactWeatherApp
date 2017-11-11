@@ -7,6 +7,14 @@ import Weather from 'Weather';
 import About from 'About';
 import Examples from 'Examples';
 
+// Load foundation
+require('style-loader!css-loader!foundation-sites/dist/css/foundation.min.css');
+require('style-loader!css-loader!foundation-sites/dist/css/foundation-float.min.css');
+$(document).foundation();
+
+// app css
+require('style-loader!css-loader!applicationStyles');
+
 ReactDOM.render(
     <HashRouter history={hashHistory}>
         <Main>
