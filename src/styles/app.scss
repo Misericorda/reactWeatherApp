@@ -1,0 +1,15 @@
+@import "base/variables";
+@import '~foundation-sites/scss/foundation';
+@include foundation-everything;
+@include foundation-grid;
+
+$space-large: 2.5rem;
+
+.page-title {
+  margin-top: $space-large;
+  margin-bottom: $space-large;
+}
+
+input[type=search] {
+  box-shadow: none;
+}
