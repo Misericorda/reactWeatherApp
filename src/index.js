@@ -5,19 +5,9 @@ import App from './App'
 import './styles/app.scss'
 import 'foundation-sites/dist/js/foundation.min'
 
-// import core foundation files
-
-
-// ready to go
+// start foundation
 $(document).ready(function () {
   $(document).foundation()
 });
-
-// $(document).on('closed.zf.reveal', '[data-reveal]', (e) => {
-//   // debugger
-//   console.log('caught')
-//   // $(this).remove()
-// });
-
 
 render(<App/>, document.getElementById('app'));
